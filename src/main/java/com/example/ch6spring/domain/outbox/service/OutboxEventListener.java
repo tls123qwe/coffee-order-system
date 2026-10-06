@@ -9,7 +9,7 @@ import org.springframework.transaction.event.TransactionalEventListener;
 @Component
 @RequiredArgsConstructor
 
-// 주문이 커밋되면 죽성 전송(실시간성)
+// 주문이 커밋되면 즉시 전송(실시간성)
 public class OutboxEventListener {
 
     private final OutboxSender outboxSender;

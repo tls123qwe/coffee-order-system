@@ -42,7 +42,7 @@ public class OutboxSender {
     public void retryPending() {
         LocalDateTime before = LocalDateTime.now().minusSeconds(RETRY_DELAY_SECONDS);
 
-        outboxEventRepository.findPendingFirRetry(before, RETRY_BATCH_SIZE)
+        outboxEventRepository.findPendingForRetry(before, RETRY_BATCH_SIZE)
                 .forEach(this::send);
     }
 

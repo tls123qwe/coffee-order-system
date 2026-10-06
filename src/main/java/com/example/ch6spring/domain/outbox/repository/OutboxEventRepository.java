@@ -37,6 +37,6 @@ public interface OutboxEventRepository extends JpaRepository<OutboxEvent, Long> 
             LIMIT :limit
             FOR UPDATE SKIP LOCKED
             """, nativeQuery = true)
-    List<OutboxEvent> findPendingFirRetry(@Param("before") LocalDateTime before,
+    List<OutboxEvent> findPendingForRetry(@Param("before") LocalDateTime before,
                                           @Param("limit") int limit);
 }
